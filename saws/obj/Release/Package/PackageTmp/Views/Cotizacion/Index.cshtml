@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "Cotizacion";
+}
+
+<h2>Cotizacion</h2>
+
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+@*<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>*@
+
+
+@using (Html.BeginForm("Reporte", "Cotizacion"))
+{
+    <div ng-app="myApp" class="container">
+
+        <div class="form-horizontal" ng-controller="dropdownCtrl">
+
+            <div class="table-responsive">
+                <p>En la siguiente tabla puedes realizar una cotización para estudios en el exterior:</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>1. Elige el Lugar</th>
+                            <th>2. Elige el curso</th>
+
+                        </tr>
+
+
+                    </thead>
+                    <tbody>
+
+
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="country" class="col-sm-2 control-label">A. Elige el lugar </label>
+                                    <div class="col-sm-7">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country" class="col-sm-2 control-label">Pais </label>
+                                    <div class="col-sm-7">
+                                        <select id="Pais" name="Pais" ng-model="customer.Country"
+                                                ng-options="obj.id as obj.country for obj in countries"
+                                                ng-change="getCountryStates()"
+                                                class="form-control"
+                                                ng-required="true"
+                                                id="country">
+                                            <option value="">-- Selecciona un país --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="state" class="col-sm-2 control-label">Ciudad </label>
+                                    <div class="col-sm-7">
+                                        <select ng-model="customer.State"
+                                                ng-options="x.Id as x.state for x in sates"
+                                                ng-change="getStateCities()"
+                                                class="form-control"
+                                                ng-required="true"
+                                                id="state">
+                                            <option value="">-- Seleccione una ciudad --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="city" class="col-sm-2 control-label">Institucion </label>
+                                    <div class="col-sm-7">
+                                        <select ng-model="customer.City"
+                                                ng-options="x.Id as x.city for x in cities"
+                                                class="form-control"
+                                                ng-required="true"
+                                                id="city">
+                                            <option value="">-- Seleccione una institucion --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="city" class="col-sm-2 control-label">Sede </label>
+                                    <div class="col-sm-7">
+                                        <select ng-model="customer.City"
+                                                ng-options="x.Id as x.city for x in cities"
+                                                class="form-control"
+                                                ng-required="true"
+                                                id="city">
+                                            <option value="">-- Seleccione una sede --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-offset-2">
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-success">  Cotizar  </button>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2">
+
+                                        @*<b>Country:</b> {{customer.Country}}
+                                            <b>State:</b> {{customer.State}}
+                                            <b>City:</b> {{customer.City}}*@
+                                    </div>
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="form-group">
+                                    <label for="country" class="col-sm-2 control-label">B. Elige el Curso </label>
+                                    <div class="col-sm-7">
+
+                                    </div>
+                                </div>
+
+                                @*<div class="form-group">
+                                        <label for="country" class="col-sm-2 control-label">Country </label>
+                                        <div class="col-sm-7">
+                                            <select id="Pais" name="Pais" ng-model="customer.Country"
+                                                    ng-options="obj.id as obj.country for obj in countries"
+                                                    ng-change="getCountryStates()"
+                                                    class="form-control"
+                                                    ng-required="true"
+                                                    id="country">
+                                                <option value="">-- Choose Country --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="state" class="col-sm-2 control-label">State </label>
+                                        <div class="col-sm-7">
+                                            <select ng-model="customer.State"
+                                                    ng-options="x.Id as x.state for x in sates"
+                                                    ng-change="getStateCities()"
+                                                    class="form-control"
+                                                    ng-required="true"
+                                                    id="state">
+                                                <option value="">-- Choose State --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="city" class="col-sm-2 control-label">City </label>
+                                        <div class="col-sm-7">
+                                            <select ng-model="customer.City"
+                                                    ng-options="x.Id as x.city for x in cities"
+                                                    class="form-control"
+                                                    ng-required="true"
+                                                    id="city">
+                                                <option value="">-- Choose City --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2">
+
+                                            <b>Country:</b> {{customer.Country}}
+                                            <b>State:</b> {{customer.State}}
+                                            <b>City:</b> {{customer.City}}
+                                        </div>
+                                    </div>*@
+
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
+   
+
+
+   
+}
+
+
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js'></script>
+<script src="~/Scripts/index.js"></script>
+

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReporte" targetNamespace="http://tempuri.org/DataSetReporte.xsd" xmlns:mstns="http://tempuri.org/DataSetReporte.xsd" xmlns="http://tempuri.org/DataSetReporte.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReporte" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReporte" msprop:Generator_UserDSName="DataSetReporte">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cotizacion" msprop:Generator_TableClassName="CotizacionDataTable" msprop:Generator_TableVarName="tableCotizacion" msprop:Generator_TablePropName="Cotizacion" msprop:Generator_RowDeletingName="CotizacionRowDeleting" msprop:Generator_RowChangingName="CotizacionRowChanging" msprop:Generator_RowEvHandlerName="CotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionRowDeleted" msprop:Generator_UserTableName="Cotizacion" msprop:Generator_RowChangedName="CotizacionRowChanged" msprop:Generator_RowEvArgName="CotizacionRowChangeEvent" msprop:Generator_RowClassName="CotizacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idcotizacion" msprop:Generator_ColumnVarNameInTable="columnidcotizacion" msprop:Generator_ColumnPropNameInRow="idcotizacion" msprop:Generator_ColumnPropNameInTable="idcotizacionColumn" msprop:Generator_UserColumnName="idcotizacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Pais" msprop:Generator_ColumnVarNameInTable="columnPais" msprop:Generator_ColumnPropNameInRow="Pais" msprop:Generator_ColumnPropNameInTable="PaisColumn" msprop:Generator_UserColumnName="Pais" type="xs:string" minOccurs="0" />
+              <xs:element name="Ciudad" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_UserColumnName="Ciudad" type="xs:string" minOccurs="0" />
+              <xs:element name="Institucion" msprop:Generator_ColumnVarNameInTable="columnInstitucion" msprop:Generator_ColumnPropNameInRow="Institucion" msprop:Generator_ColumnPropNameInTable="InstitucionColumn" msprop:Generator_UserColumnName="Institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Cotizacion" />
+      <xs:field xpath="mstns:idcotizacion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
